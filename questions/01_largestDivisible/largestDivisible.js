@@ -4,9 +4,12 @@ write the largestDivisible function
 
 */
 
-function largestDivisible(arr, num) {}
+function largestDivisible(arr, num) {
 
-// console.log(largestDivisible([1, 2, 3, 4, 5, 6, 7], 3));//6
-// console.log(largestDivisible([1], 2));//null
+const filtered = arr.filter(item => {
+    return item % num === 0;
+    });
+    return (filtered.length === 0 ? null : filtered.sort().pop())
+}
 
 module.exports = { largestDivisible };
