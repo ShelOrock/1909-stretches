@@ -27,16 +27,28 @@ productWhichMadeMostMoney returns an object with an id for that product and a to
 //write the productWhichMadeMostMoney function
 
 function bestSales(sales) {
-  const poo = sales.reduce((accum, item) => {
-    if(item.productId in accum) {
-      return accum.amount += item.amount;
-    } else {
-      const amount = accum.amount = item.amount;
-      const productId = accum.productId = item.productId;
-      return accum.concat({amount, productId})
-    }
-  }, [])
-  console.log(poo)
+  let reduced = sales
+    .reduce((accum, item) => {
+      const prop = item.productId;
+      if(!accum[prop]) {
+        accum[prop] = [];
+      }
+      accum[prop].push(item.amount);
+      return accum;
+    }, {})
+
+  const most = Object.values(reduced).map(val => {
+    return val.reduce((accum, item) => {
+      return accum + item
+    });
+  });
+
+  console.log(reduced);
+
+  if(sale = []) {
+    return {};
+  }
+  return { id: '', total: Math.max(...most)}
 }
 
 module.exports = { bestSales, sales };
