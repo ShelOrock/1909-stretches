@@ -8,23 +8,7 @@ zip([
 */
 
 function zip(objs) {
-  // let combinedArr = [];
-  // let arr = [];
-  // const entries = objs.forEach(item => {
-  //   arr.push(Object.entries(item));
-  // })
 
-  // for(let i = 0; i < arr.length; i++) {
-  //     for(let j = 0; j < arr[i].length; j++) {
-  //       if(combinedArr.includes(arr[i][0])) {
-  //         arr[i][0] += arr[i][1];
-  //       } else {
-  //         arr[i][0] = arr[i][1];
-  //         combinedArr.push(arr[i][0])
-  //       }
-  //     }
-  // }
-  // console.log(combinedArr);
   return objs.reduce((curr, accum) => {
     for(const key in curr) {
       if(key in accum) {
