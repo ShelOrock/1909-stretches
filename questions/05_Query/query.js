@@ -46,9 +46,8 @@ const items = [
 
 function query(arr, obj) {
   const poo = arr.filter(item => {
-    if(Object.entries(item).includes(Object.entries(obj))) {
-      return item;
-    }
+    return Object.entries(item).includes(Object.entries(obj))
+  
   });
   console.log(poo);
   return poo;
