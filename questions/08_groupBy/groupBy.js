@@ -1,19 +1,19 @@
 function groupBy(arr, attr) {
     if(typeof attr === 'string') {
         return arr.reduce((accum, item) => {
-            if(item.length in accum) {
-                accum[item.length].push(item);
+            if(item[attr] in accum) {
+                accum[item[attr]].push(item);
             } else {
-                accum[item.length] = [item];
+                accum[item[attr]] = [item];
             }
             return accum;
         }, {});
     } else {
         return arr.reduce((accum, item) => {
-            if(Math.floor(item) in accum) {
-                accum[Math.floor(item)].push(item);
+            if(attr(item) in accum) {
+                accum[attr(item)].push(item);
             } else {
-                accum[Math.floor(item)] = [item]
+                accum[attr(item)] = [item]
             }
             return accum;
         }, {});
