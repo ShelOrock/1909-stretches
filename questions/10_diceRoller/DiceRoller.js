@@ -9,17 +9,18 @@ class DiceRoller {
     } else {
     this.sides = sides,
     this.numDice = numDice,
-
     this.history = []
     }
   }
 
   roll() {
-    const diceRoll = new Array(this.numDice).fill(0).map((val, idx) => {
-      val = idx + 1;
-      return val;
-    })
-    this.history.push(Math.ceil(Math.random()) * diceRoll.length)
+    const diceRoll = [];
+    diceRoll.map((val, idx) => {
+      let randomVal = Math.ceil(Math.random() * this.sides);
+      this.history.push(randomVal)
+      return randomVal;
+    });
+    return diceRoll;
   }
 }
 
