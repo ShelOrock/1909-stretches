@@ -8,13 +8,21 @@
 
 const floydsTriangle = n => {
     let tempVal = 1;
+    let getN = n;
+    let finalRes = '';
     let res = ''
     while(n > 0) {
         res += `${tempVal}`
         n--;
         tempVal++;
     }
-    console.log(res);
+
+    while(getN > 0) {
+        finalRes += res.slice(0, getN)
+        getN--
+    }
+    console.log(finalRes);
+    return finalRes;
 };
 
 module.exports = { floydsTriangle };
