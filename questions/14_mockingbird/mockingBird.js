@@ -1,5 +1,5 @@
 const repeater = (func, n) => {
-  // repeater runs a function n times and returns an array of its outputs
+  return new Array(n).fill('').map(item => item = func())
 };
 
 module.exports = { repeater };
