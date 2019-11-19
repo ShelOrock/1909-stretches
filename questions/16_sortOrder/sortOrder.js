@@ -17,7 +17,6 @@ function sortOrder(data, key1, key2) {
         return prev;
     });
 
-
     return [];
 }
 
